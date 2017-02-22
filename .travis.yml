@@ -4,13 +4,12 @@ services: docker
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
 
-before_script:
-  - image="flyandi/ci-build-image-aws-lambda-node"
-  - image="${image//'/'/-}"
-
 script:
-  - docker build -t "$image" "latest"
-  - ~/official-images/test/run.sh "$image"
+  - docker build -t latest .
+  - docker run -it -d latest node
+  - docker run -it -d latest aws
+  - docker run -it -d latest zip
+  - docker run -it -d latest docker
 
 after_script:
   - docker images
