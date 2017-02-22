@@ -1,14 +1,19 @@
+# Generic CI Build Image for Amazon Lambda (Node Environment)
 #
-# Generic CI Build Image for AWS Lambda Node
+# https://github.com/flyandi/ci-build-image-aws-lambda-node
 # Maintained by Andy Schwarz <flyandi@yahoo.com>
+# 
+# This docker image is intended to provide a lightweight but still feature-rich 
+# build image for Amazon Lambda Functions. The image includes several standard 
+# system packages, node and the Amazon Command Line Tool.
 #
-# flyandi/ci-build-image-aws-lambda-node
+# Its mainly used for continues integration build jobs.
 #
-# Contains
-# - System packages (wget, zip/unzip)
-# - Docker
-# - Node 4.3.2 (Current AWS Lambda Runtime)
-# - AWS Command Line Tool (aws-cli)
+# - Current Lambda Node Runtime (4.3.2)
+# - Latest AWSCLI 
+# - System packages like wget, jq, zip, unzip, curl, ssh, git, etc.
+# - Bonus: Docker
+#
 
 FROM debian:jessie
 MAINTAINER Andy Schwarz <flyandi@yahoo.com>

@@ -6,9 +6,11 @@ Generic CI Build Image for Amazon Lambda (Node Environment)
 Introduction
 ------------
 
-This project intend is to provide a lightweight but still feature-full continues integration build image for Amazon Lambda (Node Environment). It bundles several system packages with node and the Amazon Command Line tool.
+This docker image is intended to provide a lightweight but still feature-rich build image for Amazon Lambda Functions. The image includes several standard system packages, node and the Amazon Command Line Tool.
 
-Image includes:
+It's purpose is mainly directed towards continues integration build jobs.
+
+Image contains:
 
 * Node Runtime 4.3.2 (Current Lambda Node Environment)
 * Latest AWSCLI Tool
@@ -19,14 +21,12 @@ The system also includes the docker runtime engine allowing to build docker imag
 Runtime vs Build
 -------------
 
-This image is not a runtime image but rather used during the build process.
+This image is not a runtime image but rather used during CI build processes.
 
 A typical pipelines uses this image to prepare the NPM modules, zip into an archive and push it to the designated Lambda function.
 
-Usage
+Standalone Usage
 -------------
-
-This image is usually used as build image during an CI process however the image can also be used standalone.
 
 ```shell
 docker pull flyandi/ci-build-image-aws-lambda-node
