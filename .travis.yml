@@ -1,0 +1,21 @@
+language: bash
+services: docker
+
+env:
+  - VERSION=1.0 VARIANT=
+
+install:
+  - git clone https://github.com/docker-library/official-images.git ~/official-images
+
+before_script:
+  - env | sort
+  - cd "$VERSION"
+  - image="flyandi/ci-build-image-aws-lambda-node:${VERSION}${VARIANT:+-$VARIANT}"
+  - image="${image//'/'/-}"
+
+script:
+  - docker build -t "$image" "${VARIANT:-.}"
+  - ~/official-images/test/run.sh "$image"
+
+after_script:
+  - docker images
