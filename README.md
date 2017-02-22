@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/flyandi/ci-build-image-aws-lambda-node.svg?branch=master)](https://travis-ci.org/flyandi/ci-build-image-aws-lambda-node)
+
 Generic CI Build Image for Amazon Lambda (Node Environment)
 ========================================================
 
